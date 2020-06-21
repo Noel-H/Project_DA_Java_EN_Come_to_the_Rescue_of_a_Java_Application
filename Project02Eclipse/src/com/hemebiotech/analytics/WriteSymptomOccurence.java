@@ -1,6 +1,7 @@
 package com.hemebiotech.analytics;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -16,7 +17,7 @@ public class WriteSymptomOccurence {
         this.sortedList = sortedList;
     }
 
-    void writeSymptomOccurence(){
+    public void writeSymptomOccurence(){
 
         try {
             FileWriter writer = new FileWriter("result.out");
@@ -30,7 +31,7 @@ public class WriteSymptomOccurence {
             }
             writer.close();
         }
-        catch (java.io.IOException e){
+        catch (IOException e){
             e.printStackTrace();
         }
     }

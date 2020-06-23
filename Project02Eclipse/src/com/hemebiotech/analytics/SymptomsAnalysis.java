@@ -6,20 +6,27 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * This class count symptom from a file and then write occurrence in a new file
+ */
 public class SymptomsAnalysis {
 
     public Properties config;
 
+    /**
+     * Check the path of the configuration files
+     * @return true if the path file is correct
+     */
     private boolean loadConfig() {
 
         config = new Properties();
 
         try {
-            InputStream file = new FileInputStream("Project02Eclipse\\configs.properties");
+            InputStream file = new FileInputStream("Project02Eclipse\\config.properties");
             config.load(file);
         } catch (FileNotFoundException e) {
             System.err.println(e.getMessage());
-            return true;
+            return false;
         } catch (IOException e) {
             System.err.println(e.getMessage());
             return false;
@@ -27,7 +34,9 @@ public class SymptomsAnalysis {
         return true;
     }
 
-
+    /**
+     * Count symptom from a file and then write occurrences in a new file
+     */
     public void launchSymptomsAnalysis () {
         if (!loadConfig()){
             return;

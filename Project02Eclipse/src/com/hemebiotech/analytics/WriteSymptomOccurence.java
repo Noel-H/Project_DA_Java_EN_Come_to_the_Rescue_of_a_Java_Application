@@ -7,16 +7,26 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
 
+/**
+ * This class compare occurrences and save that information in a file
+ */
 public class WriteSymptomOccurence {
 
     private List<String> unsortedList;
     private TreeSet sortedList;
 
+    /**
+     * @param unsortedList a list of symptoms
+     * @param sortedList a list of symptoms without duplicate in alphabetic order
+     */
     public WriteSymptomOccurence(List<String> unsortedList, TreeSet sortedList){
         this.unsortedList = unsortedList;
         this.sortedList = sortedList;
     }
 
+    /**
+     * Compare the occurrences and write the result in a file
+     */
     public void writeSymptomOccurence(){
 
         try {
